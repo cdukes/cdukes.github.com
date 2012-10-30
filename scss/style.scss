@@ -1,0 +1,290 @@
+@import "compass/css3";
+@import "normalize.scss";
+
+$breakWidth: 	700px;
+$offset:		8px;
+$wrapperOffset:	10px;
+
+$darkText: 		#252525;
+$lightText: 	#676767;
+
+$white: 		#f6f6f6;
+$grey:			#757575;
+$red:			#a41600;
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
+* { @include box-sizing (border-box); }
+
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection, ::selection {
+    background: $lightText;
+    color: $white;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    margin: 1em 0;
+    padding: 0;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    padding: 0.2em 0;
+    background: #ccc;
+    color: #000;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+strong {
+	color: $red
+}
+
+
+body {
+	background: url(../img/bg.jpg) no-repeat center center fixed; 
+	@include background-size (cover);
+	text-align: center;
+	font-family:"Ubuntu","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight:400;
+	@include text-shadow(1px 1px 1px #f6f6f6);
+}
+
+#wrapper {
+	@include border-radius ($offset);
+	display: block;
+	margin: $wrapperOffset auto 3*$wrapperOffset;
+	padding: 2*$wrapperOffset 2*$wrapperOffset 4*$wrapperOffset;
+	max-width: $breakWidth;
+	border: 1px solid $white;
+	background: rgba($white, .7);
+	@include box-shadow($darkText 0 0 $offset);
+}
+
+
+header, section {
+	border-bottom: .5*$offset dotted lighten($lightText, 20%);
+}
+
+section:last-child {border: none;}
+
+h1, h2 {
+	color: $darkText;
+}
+
+h3 {
+	color: $lightText;
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+h3:before, h3:after {
+	padding: 0 $offset;
+	content: "-";
+}
+
+a {
+	color: $red;
+	text-decoration: none;
+}
+
+a:hover {
+	color: lighten($red, 20%);
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 850px) {
+	body {
+		background: url(../img/bg_mobile.png);
+	}
+}
+
+@media only screen and (max-width: $breakWidth) {
+	#wrapper {
+		@include border-radius (0);
+		margin: 0;
+		border: none;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    overflow: hidden;
+    border: 0;
+    background-color: transparent;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    display: block;
+    width: 0;
+    height: 100%;
+    content: "";
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        box-shadow:none !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

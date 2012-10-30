@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Cooper Dukes @INNEO
+
+# THANKS
+
+    Subtle Backgrounds - http://subtlepatterns.com/random-grey-variations/
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
