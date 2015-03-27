@@ -1,0 +1,19 @@
+.wrapper {
+	@extend %wrap;
+	padding: 1em;
+	max-width: $siteWidth;
+	background: rgba($white, .7);
+	box-shadow: 0 0 .5em $black;
+}
+
+.block {
+	border-top: 3px dotted lighten($text, 20%);
+}
+
+@include breakpoint(full) {
+	.wrapper {
+		margin: 1em auto;
+		border: 1px solid $white;
+		border-radius: 5px;
+	}
+}

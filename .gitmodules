@@ -1,3 +1,0 @@
-[submodule "sass/normalize.scss"]
-	path = sass/normalize.scss
-	url = git://github.com/JohnAlbin/normalize.css-with-sass-or-compass.git

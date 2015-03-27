@@ -1,0 +1,50 @@
+body {
+	background: $white;
+	text-align: center;
+	text-rendering: optimizeLegibility; // May break certain @font-face fonts. Use `text-rendering: auto;` to selectively undo.
+	font-family: $sans;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	-moz-font-feature-settings: 'liga' on;
+}
+
+@include breakpoint(full) {
+	body {
+		background-image: url(../images/cooper.jpg);
+		background-attachment: fixed;
+		background-position: center top;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+::selection {
+	background: $text;
+	color: $white;
+	text-shadow: none;
+}
+
+a {
+	color: $orange;
+	text-decoration: none;
+	transition: all .1s ease-in-out;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: lighten($orange, 20%);
+	}
+}
+
+p {
+	@extend %type;
+	margin: 0;
+	padding: 0;
+}
+
+strong {
+	color: $orange;
+	text-shadow: 1px 1px 1px $white;
+	font-weight: bold;
+}

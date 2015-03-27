@@ -1,0 +1,27 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+
+h1,
+h2 {
+	color: $black;
+}
+
+h3 {
+	color: $text;
+	font-weight: normal;
+	font-size: 1.2em;
+
+	&:before,
+	&:after {
+		padding: 0 .5em;
+		content: '-';
+	}
+}

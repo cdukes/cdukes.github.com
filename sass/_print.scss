@@ -1,30 +1,37 @@
 @media print {
 	* {
-		@include filter(none !important);
 		background: transparent !important;
+		filter: none !important;
 		color: black !important;
 		text-shadow: none !important;
 	}
 
-	a, a:visited {
+	a:link,
+	a:visited {
 		color: black !important;
 		text-decoration: underline;
 	}
 
+	pre,
 	blockquote {
+		border: 1px solid black;
 		page-break-inside: avoid;
 	}
 
-    @page {
-    	margin: .75in;
-    }
+	@page {
+		margin-top: .75in;
+		margin-bottom: .75in;
+	}
 
-    p, h2, h3 {
-    	orphans: 3;
-    	widows: 3;
-    }
+	p,
+	h2,
+	h3 {
+		orphans: 2;
+		widows: 2;
+	}
 
-    h2, h3 {
-    	page-break-after: avoid;
-    }
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 }
